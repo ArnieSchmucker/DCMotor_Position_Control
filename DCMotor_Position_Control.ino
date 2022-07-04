@@ -58,6 +58,9 @@ void pid() {
 
 void setup() {
   Serial.begin(115200);
+  //alter pin5 PWM to 62.5kHz
+  TCCR0B = 0b00000001; // x1
+  TCCR0A = 0b00000011; // fast pwm
   lcd.init();
   lcd.clear();
   lcd.backlight();
